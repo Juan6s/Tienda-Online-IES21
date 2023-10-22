@@ -4,7 +4,7 @@ export function navbar(options) {
     list += parse_option(option);
   }
 
-  return `    
+  return `  
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="../index.html">
@@ -25,10 +25,11 @@ export function navbar(options) {
           <ul class="nav nav-underline me-auto mb-2 mb-lg-0">
             ${list}
           </ul>
-          <a class="btn btn-outline-danger" href="#">Logout</a>
+          <a class="btn btn-outline-danger" onclick="logout()">Logout</a>
         </div>
       </div>
-    </nav>`;
+    </nav>
+    `;
 }
 
 function parse_option(option) {
@@ -36,14 +37,13 @@ function parse_option(option) {
     let dropdown = "";
     for (const dropwdown_option of option.options) {
       dropdown += ` <li>
-                    <a class="dropdown-item" href=${dropwdown_option.href}>${dropwdown_option.header}</a>
+                    <button class="dropdown-item" id="${dropwdown_option.id}">${dropwdown_option.header}</button>
                   </li>`;
     }
     return ` <li class="nav-item dropdown">
                     <a
                       class="nav-link dropdown-toggle"
                       data-bs-toggle="dropdown"
-                      href="#"
                       role="button"
                       aria-expanded="false"
                       >Categorias</a
@@ -54,8 +54,8 @@ function parse_option(option) {
                   </li>`;
   }
   return `<li class="nav-item">
-      <a class="nav-link ${option.active ? "active" : ""}" onclick="${
-    option.onClick
-  }">${option.header}</a>
+      <button id="${option.id}" class="nav-link ${
+    option.active ? "active" : ""
+  }" >${option.header}</button>
       </li>`;
 }
