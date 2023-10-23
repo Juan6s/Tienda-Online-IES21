@@ -43,6 +43,7 @@ const signupButton = document.querySelector("#navbar_signup");
 const headsetsButton = document.querySelector("#navbar_headsets");
 const bagsButton = document.querySelector("#navbar_bags");
 const accesoriesButton = document.querySelector("#navbar_accessories");
+const logoutButton = document.querySelector("#logout");
 
 homeButton.addEventListener("click", () => {
   window.location.href = "/private_pages/home/home.html";
@@ -54,11 +55,14 @@ signupButton.addEventListener("click", () => {
   window.location = "/public_pages/signup/sign-up.html";
 });
 headsetsButton.addEventListener("click", () => {
-  window.location = "/private_pages/categories/accesories/accessories.html";
+  window.location = "/private_pages/categories/headsets/headsets.html";
 });
 bagsButton.addEventListener("click", () => {
   window.location = "/private_pages/categories/bags/bags.html";
 });
 accesoriesButton.addEventListener("click", () => {
   window.location = "/private_pages/categories/accesories/accessories.html";
+});
+logoutButton.addEventListener("click", () => {
+  window.location = "/public_pages/login/login.html";
 });

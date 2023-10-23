@@ -25,7 +25,7 @@ export function navbar(options) {
           <ul class="nav nav-underline me-auto mb-2 mb-lg-0">
             ${list}
           </ul>
-          <a class="btn btn-outline-danger" onclick="logout()">Logout</a>
+          <button class="btn btn-outline-danger" id="logout" ">Logout</button>
         </div>
       </div>
     </nav>
