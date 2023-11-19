@@ -1,27 +1,24 @@
 import { card } from "../../../components/cards/card.mjs";
 
-document.querySelector("body").insertAdjacentHTML(
-  "beforeend",
-  card([
-    {
-      imagePath: "../example.jpg",
-      description: "Esto es una descripcion",
-      price: 200,
-      title: "Esto es un titulo",
-    },
 
-    {
-      imagePath: "../example.jpg",
-      description: "Esto es una descripcion",
-      price: 200,
-      title: "Esto es un titulo",
-    },
+async function getProducts(){
+  const response = await fetch('https://fakestoreapi.com/products/category/electronics')
+  const json = await response.json()
+  return json.map((product)=>{
+    return {
+      imagePath: product.image,
+      description: product.description,
+      price: product.price,
+      title: product.title,
+    }
+  })
+}
 
-    {
-      imagePath: "../example.jpg",
-      description: "Esto es una descripcion",
-      price: 200,
-      title: "Esto es un titulo",
-    },
-  ])
-);
+async function main(){
+  const products = await getProducts()
+  document.querySelector("body").insertAdjacentHTML(
+    "beforeend",
+    card(products)
+  );
+}
+main()
