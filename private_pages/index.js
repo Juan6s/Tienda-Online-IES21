@@ -26,9 +26,9 @@ const options = [
     isDropwdown: true,
     header: "Categorias",
     options: [
-      { id: "navbar_headsets", header: "Headsets" },
-      { id: "navbar_bags", header: "Bags" },
-      { id: "navbar_accessories", header: "Accesorios" },
+      { id: "navbar_headsets", header: "Ropa de hombre" },
+      { id: "navbar_bags", header: "Joyeria" },
+      { id: "navbar_accessories", header: "Electronica" },
     ],
   },
 ];
