@@ -37,7 +37,7 @@ function parse_option(option) {
     let dropdown = "";
     for (const dropwdown_option of option.options) {
       dropdown += ` <li>
-                    <button class="dropdown-item" id="${dropwdown_option.id}">${dropwdown_option.header}</button>
+                    <a class="dropdown-item" href="${dropwdown_option.href}" id="${dropwdown_option.id}">${dropwdown_option.header}</a>
                   </li>`;
     }
     return ` <li class="nav-item dropdown">
@@ -54,8 +54,8 @@ function parse_option(option) {
                   </li>`;
   }
   return `<li class="nav-item">
-      <button id="${option.id}" class="nav-link ${
+      <a id="${option.id}" href="${option.href}" class="nav-link ${
     option.active ? "active" : ""
-  }" >${option.header}</button>
+  }" >${option.header}</a>
       </li>`;
 }

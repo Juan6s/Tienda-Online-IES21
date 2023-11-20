@@ -10,15 +10,15 @@ async function getProducts(){
       description: product.description,
       price: product.price,
       title: product.title,
+      id: product.id,
     }
   })
 }
 
 async function main(){
   const products = await getProducts()
-  document.querySelector("body").insertAdjacentHTML(
-    "beforeend",
-    card(products)
-  );
+  const body = document.querySelector("body")
+  card(products, body)
+
 }
 main()

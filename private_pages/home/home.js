@@ -2,7 +2,7 @@ import { card } from "../../../components/cards/card.mjs";
 
 
 async function getProducts(){
-  const response = await fetch('https://fakestoreapi.com/products/category/jewelery')
+  const response = await fetch('https://fakestoreapi.com/products')
   const json = await response.json()
   return json.map((product)=>{
     return {
