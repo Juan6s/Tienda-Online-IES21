@@ -14,7 +14,7 @@
   <body>
     <div class="d-flex align-items-center py-5">
       <div class="form-signin p-3 shadow m-auto">
-        <form class="p-5" method="get" action="../../private_pages/home/home.html">
+        <form class="p-5" id="loginForm">
           <h1 class="h3 mb-3 fw-normal">Iniciar Sesión</h1>
 
           <div class="form-floating mb-3">
@@ -39,13 +39,16 @@
           <button class="btn btn-primary w-100 py-2" type="submit">
             Sign in
           </button>
-          <a class="btn btn-link" href="../signup/sign-up.html">¿No Tenes Cuenta? Hace click Aqui</a>
+          <a class="btn btn-link" href="../signup/sign-up.html"
+            >¿No Tenes Cuenta? Hace click Aqui</a
+          >
           <p class="mt-5 mb-3 text-body-secondary">
             &copy; 2023 TIENDA EL AGUILA
           </p>
         </form>
       </div>
     </div>
+    <script type="module" src="./login.js"></script>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
