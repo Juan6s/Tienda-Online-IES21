@@ -7,7 +7,6 @@ const options = [
     id: "navbar_home",
     header: "Home",
     active: true,
-    onClick: "myFunction()",
     href: "/private_pages/home/home.html",
   },
   {
@@ -30,6 +29,13 @@ const options = [
         href: "/private_pages/categories/accesories/accessories.html",
       },
     ],
+  },
+  {
+    isDropwdown: false,
+    id: "navbar_Carrito",
+    header: "Carrito",
+    active: false,
+    href: "/private_pages/shop/shop.html",
   },
 ];
 
