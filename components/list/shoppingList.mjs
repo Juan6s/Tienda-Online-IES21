@@ -1,4 +1,8 @@
-import { deleteItem, getAllItems } from "../../services/shopStorage.mjs";
+import {
+  deleteItem,
+  getAllItems,
+  deleteAll,
+} from "../../services/shopStorage.mjs";
 
 export function list(shoppingList, htmlComponent) {
   let html = "";
@@ -18,6 +22,7 @@ export function list(shoppingList, htmlComponent) {
   });
 
   htmlComponent.innerHTML = `
+  <div class="m-1 p-2 shadow">
     <table class="table">
         <thead>
         <tr>
@@ -32,6 +37,8 @@ export function list(shoppingList, htmlComponent) {
         ${html}
         </tbody>
     </table>
+    <button id="clearShopping" type="button" class="btn btn-danger ml-1 mb-2"">Borrar carrito</button>
+    </div>
 
     <div class="m-5 p-5 shadow">
     <form class="">
@@ -126,6 +133,10 @@ export function list(shoppingList, htmlComponent) {
   </div>
 
   `;
+  document.querySelector("#clearShopping").addEventListener("click", () => {
+    deleteAll();
+    list(getAllItems(), htmlComponent);
+  });
 
   shoppingList.forEach((item, index) => {
     const deleteButton = document.querySelector(`#delete-${index}`);

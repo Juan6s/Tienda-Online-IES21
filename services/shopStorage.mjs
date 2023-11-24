@@ -32,6 +32,10 @@ export function deleteItem(itemID, amount) {
   localStorage.setItem("shop", JSON.stringify(items));
 }
 
+export function deleteAll() {
+  localStorage.clear();
+}
+
 export function getAllItems() {
   const shopList = localStorage.getItem("shop");
   return JSON.parse(shopList);
