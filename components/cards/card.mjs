@@ -11,7 +11,7 @@ export function card(cards, htmlComponent) {
     "beforeend",
     `
     <section class="p-5">
-      <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
+      <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
           ${html}
       </div>    
      </section> 
