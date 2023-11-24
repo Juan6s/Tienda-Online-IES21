@@ -43,6 +43,13 @@ document
   .querySelector("body")
   .insertAdjacentHTML("afterbegin", navbar(options));
 
+document
+  .querySelector("footer")
+  .insertAdjacentHTML(
+    "beforeend",
+    `<p>&copy; 2023 Tienda de Aeronautica "El aguila"</p>`
+  );
+
 const logout = document.querySelector("#logout");
 
 logout.addEventListener("click", (e) => {
