@@ -1,4 +1,5 @@
 import { card } from "../../../components/cards/card.mjs";
+import { translateCategory } from "../../services/categoryTranslater.mjs";
 
 async function getProducts(category) {
   const response = await fetch(
@@ -21,7 +22,7 @@ async function main() {
   const url = new URL(url_string);
 
   const category = url.searchParams.get("category");
-  document.querySelector("#title").innerText = category.toUpperCase();
+  document.querySelector("#title").innerText = translateCategory(category);
 
   const products = await getProducts(category);
   const body = document.querySelector("#container");

@@ -1,4 +1,5 @@
 import { navbar } from "../components/navbar/index.mjs";
+import { translateCategory } from "../services/categoryTranslater.mjs";
 import { closeSession } from "../services/userStorage.mjs";
 
 async function main() {
@@ -9,7 +10,7 @@ async function main() {
   const mappedCategories = categories.map((category) => {
     return {
       id: `navbar_${category}`,
-      header: category,
+      header: translateCategory(category),
       href: `/private_pages/categories/categories.html?category=${category}`,
     };
   });
