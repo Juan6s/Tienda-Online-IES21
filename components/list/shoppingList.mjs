@@ -2,7 +2,7 @@ import {
   deleteItem,
   getAllItems,
   deleteAll,
-} from "../../services/shopStorage.mjs";
+} from "../../services/storage/shopStorage.mjs";
 
 export function list(shoppingList, htmlComponent) {
   let html = "";

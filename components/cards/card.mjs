@@ -1,4 +1,4 @@
-import { saveItem } from "../../services/shopStorage.mjs";
+import { saveItem } from "../../services/storage/shopStorage.mjs";
 
 export function card(cards, htmlComponent) {
   let html = "";

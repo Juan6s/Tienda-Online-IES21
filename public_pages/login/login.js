@@ -1,4 +1,7 @@
-import { isSessionActive, saveSession } from "../../services/userStorage.mjs";
+import {
+  isSessionActive,
+  saveSession,
+} from "../../services/storage/userStorage.mjs";
 
 const form = document.querySelector("#loginForm");
 
