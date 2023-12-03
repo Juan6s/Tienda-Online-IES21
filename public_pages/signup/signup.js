@@ -1,11 +1,12 @@
+const username = document.querySelector("#floatingInput").text;
 import {
   isSessionActive,
   saveSession,
 } from "../../services/storage/userStorage.mjs";
 
-import { login } from "../../services/userService.mjs";
+import { signUp } from "../../services/userService.mjs";
 
-const form = document.querySelector("#loginForm");
+const form = document.querySelector("#signupForm");
 
 if (isSessionActive()) {
   window.location.href = "../../private_pages/home/home.html";
@@ -14,8 +15,7 @@ if (isSessionActive()) {
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const username = document.querySelector("#floatingInput").value;
-  const password = document.querySelector("#floatingPassword").value;
-  if (await login({ username, password })) {
+  if (await signUp({ username, password: 1 })) {
     saveSession();
     window.location.href = "../../private_pages/home/home.html";
   }
