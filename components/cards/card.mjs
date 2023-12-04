@@ -59,7 +59,10 @@ export function card(cards, htmlComponent) {
 
 function createCard({ imagePath, title, description, price, id }) {
   let count = 0;
-
+  const format = Intl.NumberFormat("ar-AR", {
+    style: "currency",
+    currency: "ARS",
+  });
   return `
   <div class="col p-4"> 
     <div class="card shadow">
@@ -73,7 +76,7 @@ function createCard({ imagePath, title, description, price, id }) {
     <h5 class="card-title">${title.toUpperCase()}</h5>
     <p class="card-text">${description}
     </p>
-    <p class="card-text">$${price}
+    <p class="card-text">$${format.format(price)}
     </p>
     <div class="btn-group" role="group" aria-label="cantidad">
         <button type="button" id="decrease-${id}" class="btn btn-shop btn-danger">-</button>
