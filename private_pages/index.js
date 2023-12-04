@@ -1,6 +1,11 @@
 import { navbar } from "../components/navbar/index.mjs";
 import { translateCategory } from "../services/categoryTranslater.mjs";
 import { closeSession } from "../services/storage/userStorage.mjs";
+import { isSessionActive } from "../../services/storage/userStorage.mjs";
+
+if (!isSessionActive()) {
+  window.location.href = "../../public_pages/login/login.html";
+}
 
 async function main() {
   const response = await fetch("https://fakestoreapi.com/products/categories");
